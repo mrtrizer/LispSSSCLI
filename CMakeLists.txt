@@ -18,3 +18,6 @@ set(EXECUTABLE_NAME LispSSSCLI)
 add_executable(${EXECUTABLE_NAME} ${SOURCES})
 
 target_link_libraries(${EXECUTABLE_NAME} LispSSS)
+
+install(TARGETS ${EXECUTABLE_NAME} DESTINATION lispssscli)
+install(CODE "execute_process(COMMAND ln -sf ${CMAKE_INSTALL_PREFIX}/lispssscli/${EXECUTABLE_NAME} /usr/local/bin/lispsss)")
